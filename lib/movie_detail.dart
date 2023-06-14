@@ -8,7 +8,7 @@ class MovieDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    kobisApi.getMovieDetail(movieCd: movieCd);
+    print(kobisApi.getMovieDetail(movieCd: movieCd));
 
     return Scaffold(
       body: Text("ㅎㅇ"),

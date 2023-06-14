@@ -20,7 +20,7 @@ class KobisApi {
     return [];
   }
 
-  Future<Map<String, dynamic>> getMovieInfo({required String movieCd}) async {
+  Future<Map<String, dynamic>> getMovieDetail({required String movieCd}) async {
     var uri = "$SITE/movie/searchMovieInfo.json?key=$apiKey&movieCd=$movieCd";
 
     var res = await http.get(Uri.parse(uri));

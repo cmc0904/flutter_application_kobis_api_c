@@ -30,7 +30,7 @@ class _MainPageState extends State<MainPage> {
   }
 
   void showList(Future<List<dynamic>> movies, String date) { //결과를 보여줄 곳
-    setState(() {
+    setState(() {;
       selectedDate = date;
       bodyPage = FutureBuilder(future: movies , builder: (context, snapshot) {
         if(snapshot.hasData) {

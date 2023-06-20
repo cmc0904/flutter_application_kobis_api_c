@@ -159,10 +159,7 @@ class MovieDetail extends StatelessWidget {
                         header: Text('배우',
                             style: TextStyle(
                                 color: Color(0xffffffff),
-                                fontSize: 15,233213232
-
-
-                                
+                                fontSize: 15,
                                 fontWeight: FontWeight.bold)),
                         content: DataTable(
                           sortAscending: true,

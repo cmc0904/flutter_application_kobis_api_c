@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_application_kobis_api/kobis_api.dart';
 import 'package:accordion/accordion.dart';
 import 'movie_detail_view.dart';
+import 'movie_detail_view_school.dart';
 
 class MovieDetail extends StatelessWidget {
   final String movieCd;

@@ -31,4 +31,16 @@ class KobisApi {
     }
     return {};
   }
+
+    Future<dynamic> getCompanyDetail({required String companyCd}) async {
+    var uri = "$SITE/company/searchCompanyInfo.json?key=$apiKey&companyCd=$companyCd";
+
+    var res = await http.get(Uri.parse(uri));
+
+    if(res.statusCode == 200) {
+      Map<String, dynamic> movieCompany = jsonDecode(res.body)["companyInfoResult"]["companyInfo"] as dynamic;
+      return movieCompany;
+    }
+    return {};
+  }
 }

@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:accordion/accordion.dart';
 import 'package:accordion/controllers.dart';
 
+import 'company_detail.dart';
+
 class MoviedetailView extends StatelessWidget {
   var moviesData;
 
@@ -120,12 +122,21 @@ class MoviedetailView extends StatelessWidget {
                     for (var i in moviesData?['companys'])
                       DataRow(
                         cells: [
-                          DataCell(Text(i['companyNm'],
-                              style: TextStyle(
-                                  color: Color(0xff999999),
-                                  fontSize: 14,
-                                  fontWeight: FontWeight.w700),
-                              textAlign: TextAlign.right)),
+                          DataCell(
+                            Text(i['companyNm'],
+                                style: TextStyle(
+                                    color: Color(0xff999999),
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.w700),
+                                textAlign: TextAlign.right),
+                            onTap: () {
+                              showDialog(
+                                context: context,
+                                builder: (context) =>
+                                    CompanyDialog(companyCd: i['companyCd']),
+                              );
+                            },
+                          ),
                           DataCell(Text(i['companyPartNm'],
                               style: TextStyle(
                                   color: Color(0xff999999),

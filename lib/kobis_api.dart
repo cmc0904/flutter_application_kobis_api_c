@@ -32,7 +32,7 @@ class KobisApi {
     return {};
   }
 
-    Future<dynamic> getCompanyDetail({required String companyCd}) async {
+  Future<dynamic> getCompanyDetail({required String companyCd}) async {
     var uri = "$SITE/company/searchCompanyInfo.json?key=$apiKey&companyCd=$companyCd";
 
     var res = await http.get(Uri.parse(uri));
@@ -42,5 +42,17 @@ class KobisApi {
       return movieCompany;
     }
     return {};
+  }
+
+  Future<List<dynamic>> getSearchMovieList({required String searchType, required String searchValue}) async {
+    String uri = "$SITE/movie/searchMovieList.json?key=$apiKey&$searchType=$searchValue";
+
+    var res = await http.get(Uri.parse(uri));
+
+    if(res.statusCode == 200) {
+      List<dynamic> movies = jsonDecode(res.body)["movieListResult"]["movieList"] as List<dynamic>;
+      return movies;
+    }
+    return [];
   }
 }

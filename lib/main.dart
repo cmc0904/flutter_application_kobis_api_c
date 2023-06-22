@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'main_page.dart';
+import 'rank_page.dart';
+
 void main() {
   runApp(const MyApp());
 }
